@@ -69,12 +69,17 @@ public class TarefaSpecification {
         };
     }
 
-    public static Specification<Tarefa> porPrioridade(Prioridade prioridade) {
+    public static Specification<Tarefa> porPrioridade(String prioridade) {
         return (root, query, criteriaBuilder) -> {
-            if (prioridade == null) {
+            if (prioridade == null || prioridade.trim().isEmpty()) {
                 return null;
             }
-            return criteriaBuilder.equal(root.get("prioridade"), prioridade);
+            try {
+                Prioridade prioridadeEnum = Prioridade.valueOf(prioridade.toUpperCase());
+                return criteriaBuilder.equal(root.get("prioridade"), prioridadeEnum);
+            } catch (IllegalArgumentException e) {
+                return null;
+            }
         };
     }
 }
