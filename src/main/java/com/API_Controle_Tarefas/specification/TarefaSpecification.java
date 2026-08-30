@@ -69,6 +69,20 @@ public class TarefaSpecification {
         };
     }
 
+    public static Specification<Tarefa> porStatus(String status) {
+        return (root, query, criteriaBuilder) -> {
+            if (status == null || status.trim().isEmpty()) {
+                return null;
+            }
+            try {
+                Status statusEnum = Status.valueOf(status.toUpperCase());
+                return criteriaBuilder.equal(root.get("status"), statusEnum);
+            } catch (IllegalArgumentException e) {
+                return null;
+            }
+        };
+    }
+
     public static Specification<Tarefa> porPrioridade(String prioridade) {
         return (root, query, criteriaBuilder) -> {
             if (prioridade == null || prioridade.trim().isEmpty()) {
