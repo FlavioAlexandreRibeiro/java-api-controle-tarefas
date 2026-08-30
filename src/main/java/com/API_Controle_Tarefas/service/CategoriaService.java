@@ -7,7 +7,6 @@ import com.API_Controle_Tarefas.entity.Categoria;
 import com.API_Controle_Tarefas.exception.DuplicateResourceException;
 import com.API_Controle_Tarefas.exception.ResourceNotFoundException;
 import com.API_Controle_Tarefas.repository.CategoriaRepository;
-import com.API_Controle_Tarefas.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +18,6 @@ import java.util.List;
 public class CategoriaService {
 
     private final CategoriaRepository categoriaRepository;
-    private final UsuarioRepository usuarioRepository;
 
     public CategoriaResponseDTO cadastrarCategoria(CategoriaRequestDTO categoriaDTO) {
 
