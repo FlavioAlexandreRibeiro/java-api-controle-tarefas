@@ -15,6 +15,8 @@ public record TarefaResponseDTO(
         Status status,
         Prioridade prioridade,
         LocalDate dataVencimento,
+        Long usuarioId,
+        Long categoriaId,
         LocalDateTime createdAt,
         LocalDateTime updatedAt
 
@@ -29,6 +31,8 @@ public record TarefaResponseDTO(
                 tarefa.getStatus(),
                 tarefa.getPrioridade(),
                 tarefa.getDataVencimento(),
+                tarefa.getUsuario() != null ? tarefa.getUsuario().getId() : null,
+                tarefa.getCategoria() != null ? tarefa.getCategoria().getId() : null,
                 tarefa.getCreatedAt(),
                 tarefa.getUpdatedAt()
         );
