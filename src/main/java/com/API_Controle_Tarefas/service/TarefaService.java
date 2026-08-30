@@ -39,6 +39,7 @@ public class TarefaService {
         tarefa.setTitulo(tarefaDTO.getTitulo());
         tarefa.setDescricao(tarefaDTO.getDescricao());
         tarefa.setDataVencimento(tarefaDTO.getDataVencimento());
+        tarefa.setStatus(tarefaDTO.getStatus());
         tarefa.setPrioridade(tarefaDTO.getPrioridade());
         tarefa.setUsuario(usuario);
         tarefa.setCategoria(categoria);
@@ -52,7 +53,7 @@ public class TarefaService {
     public Page<TarefaResponseDTO> buscasTodos(
             String titulo,
             String descricao,
-            LocalDateTime dataVencimento,
+            LocalDate dataVencimento,
             String status,
             String prioridade,
             Long usuarioId,
@@ -65,7 +66,7 @@ public class TarefaService {
         spec = spec.and(TarefaSpecification.porTitulo(titulo));
         spec = spec.and(TarefaSpecification.porDescricao(descricao));
         spec = spec.and(TarefaSpecification.porStatus(status));
-        spec = spec.and(TarefaSpecification.porDataVencimento(LocalDate.from(dataVencimento)));
+        spec = spec.and(TarefaSpecification.porDataVencimento(dataVencimento));
         spec = spec.and(TarefaSpecification.porPrioridade(prioridade));
         spec = spec.and(TarefaSpecification.porUsuarioId(usuarioId));
         spec = spec.and(TarefaSpecification.porCategoriaId(categoriaId));
@@ -90,6 +91,7 @@ public class TarefaService {
         tarefa.setTitulo(tarefaDTO.getTitulo());
         tarefa.setDescricao(tarefaDTO.getDescricao());
         tarefa.setDataVencimento(tarefaDTO.getDataVencimento());
+        tarefa.setStatus(tarefaDTO.getStatus());
         tarefa.setPrioridade(tarefaDTO.getPrioridade());
         tarefa.setUpdatedAt(LocalDateTime.now());
 

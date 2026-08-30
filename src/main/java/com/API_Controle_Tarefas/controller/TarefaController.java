@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @RestController
@@ -33,7 +34,7 @@ public class TarefaController {
     public ResponseEntity<Page<TarefaResponseDTO>> buscarTodos(
             @RequestParam(required = false) String titulo,
             @RequestParam(required = false) String descricao,
-            @RequestParam(required = false) LocalDateTime dataVencimento,
+            @RequestParam(required = false) LocalDate dataVencimento,
             @RequestParam(required = false) String status,
             @RequestParam(required = false) String prioridade,
             @RequestParam(required = false) Long usuarioId,
