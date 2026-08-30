@@ -53,6 +53,7 @@ public class TarefaService {
             String titulo,
             String descricao,
             LocalDateTime dataVencimento,
+            String status,
             String prioridade,
             Long usuarioId,
             Long categoriaId,
@@ -63,6 +64,7 @@ public class TarefaService {
 
         spec = spec.and(TarefaSpecification.porTitulo(titulo));
         spec = spec.and(TarefaSpecification.porDescricao(descricao));
+        spec = spec.and(TarefaSpecification.porStatus(status));
         spec = spec.and(TarefaSpecification.porDataVencimento(LocalDate.from(dataVencimento)));
         spec = spec.and(TarefaSpecification.porPrioridade(prioridade));
         spec = spec.and(TarefaSpecification.porUsuarioId(usuarioId));
