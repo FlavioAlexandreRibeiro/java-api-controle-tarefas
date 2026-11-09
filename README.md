@@ -4,46 +4,46 @@ Uma API RESTful desenvolvida com Spring Boot para gerenciamento de tarefas, usu�
 
 ## 🚀 Funcionalidades
 
-Gerenciamento de Usuários: Operações completas de CRUD para cadastro de usuários
-Gerenciamento de Categorias: Operações completas de CRUD para controle de categorias
-Gerenciamento de Tarefas: Operações completas de CRUD para controle de tarefas
-Vinculação Tarefa-Usuário: Cada tarefa é vinculada a um usuário específico
-Vinculação Tarefa-Categoria: Cada tarefa é vinculada a uma categoria específica
-Validação de Dados: Validação automática de campos obrigatórios, formato de email e telefone
-Tratamento de Exceções: Tratamento global de erros com mensagens claras
-Nome Único: Garantia de unicidade de nome no cadastro de usuários
-Email Único: Garantia de unicidade de email no cadastro de usuários
-Nome Único: Garantia de unicidade de nome no cadastro de categorias
-Relacionamento 1:N: Um usuário pode ter múltiplas tarefas
-Relacionamento N:1: Uma tarefa pertence a uma categoria
-Status de Tarefa: Controle de status (PENDENTE, EM_ANDAMENTO, CONCLUIDA, CANCELADA)
-Prioridade de Tarefa: Controle de prioridade (BAIXA, MEDIA, ALTA)
-Data de Vencimento: Controle de data limite para conclusão da tarefa
-DTOs: Separação clara entre entidades de banco e objetos de transferência de dados
-Testes Unitários: Cobertura de testes para as camadas de serviço e controller com JUnit e Mockito
-Paginação: Listagem com suporte a paginação
-Filtros Dinâmicos: Consultas dinâmicas usando Specifications
-Auditoria: Controle de datas de criação e atualização dos registros
+- Gerenciamento de Usuários: Operações completas de CRUD para cadastro de usuários
+- Gerenciamento de Categorias: Operações completas de CRUD para controle de categorias
+- Gerenciamento de Tarefas: Operações completas de CRUD para controle de tarefas
+- Vinculação Tarefa-Usuário: Cada tarefa é vinculada a um usuário específico
+- Vinculação Tarefa-Categoria: Cada tarefa é vinculada a uma categoria específica
+- Validação de Dados: Validação automática de campos obrigatórios, formato de email e telefone
+- Tratamento de Exceções: Tratamento global de erros com mensagens claras
+- Nome Único: Garantia de unicidade de nome no cadastro de usuários
+- Email Único: Garantia de unicidade de email no cadastro de usuários
+- Nome Único: Garantia de unicidade de nome no cadastro de categorias
+- Relacionamento 1:N: Um usuário pode ter múltiplas tarefas
+- Relacionamento N:1: Uma tarefa pertence a uma categoria
+- Status de Tarefa: Controle de status (PENDENTE, EM_ANDAMENTO, CONCLUIDA, CANCELADA)
+- Prioridade de Tarefa: Controle de prioridade (BAIXA, MEDIA, ALTA)
+- Data de Vencimento: Controle de data limite para conclusão da tarefa
+- DTOs: Separação clara entre entidades de banco e objetos de transferência de dados
+- Testes Unitários: Cobertura de testes para as camadas de serviço e controller com JUnit e Mockito
+- Paginação: Listagem com suporte a paginação
+- Filtros Dinâmicos: Consultas dinâmicas usando Specifications
+- Auditoria: Controle de datas de criação e atualização dos registros
 
 ## 🛠️ Tecnologias Utilizadas
 
-Java 17
-Spring Boot 4.0.8
-Spring Data JPA
-Spring Web MVC
-Spring Validation
-PostgreSQL
-Lombok
-Maven
-JUnit 5
-Mockito
+- Java 21
+- Spring Boot 4.1.1
+- Spring Data JPA
+- Spring Web MVC
+- Spring Validation
+- PostgreSQL
+- Lombok
+- Maven
+- JUnit 5
+- Mockito
 
 ## 📋 Pré-requisitos
 
-Java 17 ou superior instalado
-Maven 3.6+ instalado
-PostgreSQL 12+ instalado e rodando
-IDE de sua preferência (IntelliJ IDEA, Eclipse, VS Code, etc.)
+- Java 21 ou superior instalado
+- Maven 3.6+ instalado
+- PostgreSQL 12+ instalado e rodando
+- IDE de sua preferência (IntelliJ IDEA, Eclipse, VS Code, etc.)
 
 ## 🔧 Instalação e Configuração
 
