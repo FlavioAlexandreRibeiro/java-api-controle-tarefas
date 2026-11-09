@@ -14,7 +14,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class UsuarioService {
+public class    UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
 
@@ -35,7 +35,6 @@ public class UsuarioService {
         return UsuarioResponseDTO.fromEntity(usuario);
     }
 
-
     public List<UsuarioResponseDTO> buscarTodos() {
         return usuarioRepository.findAll().stream()
                 .map(UsuarioResponseDTO::fromEntity)
@@ -47,7 +46,6 @@ public class UsuarioService {
                 .orElseThrow(() -> new ResourceNotFoundException("Usuario", id));
         return UsuarioResponseDTO.fromEntity(usuario);
     }
-
 
     public UsuarioResponseDTO atualizarUsuario(Long id, UsuarioRequestDTO usuarioDTO) {
 

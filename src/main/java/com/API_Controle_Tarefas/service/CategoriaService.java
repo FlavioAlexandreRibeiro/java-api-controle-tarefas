@@ -1,6 +1,5 @@
 package com.API_Controle_Tarefas.service;
 
-
 import com.API_Controle_Tarefas.dto.CategoriaRequestDTO;
 import com.API_Controle_Tarefas.dto.CategoriaResponseDTO;
 import com.API_Controle_Tarefas.entity.Categoria;
@@ -33,7 +32,6 @@ public class CategoriaService {
         return CategoriaResponseDTO.fromEntity(categoria);
     }
 
-
     public List<CategoriaResponseDTO> buscarTodos() {
         return categoriaRepository.findAll().stream()
                 .map(CategoriaResponseDTO::fromEntity)
@@ -45,7 +43,6 @@ public class CategoriaService {
                 .orElseThrow(() -> new ResourceNotFoundException("Categoria", id));
         return CategoriaResponseDTO.fromEntity(categoria);
     }
-
 
     public CategoriaResponseDTO atualizarCategoria(Long id, CategoriaRequestDTO categoriaDTO) {
         Categoria categoria = categoriaRepository.findById(id)
@@ -61,7 +58,6 @@ public class CategoriaService {
         return CategoriaResponseDTO.fromEntity(categoria);
     }
 
-
     private void verificarNomeDuplicado(String nome) {
         if (categoriaRepository.existsByNome(nome)) {
             throw new DuplicateResourceException("Nome", nome);
@@ -73,7 +69,6 @@ public class CategoriaService {
             throw new DuplicateResourceException("Nome", nome);
         }
     }
-
 
     public void excluirCategoria(Long id) {
         Categoria categoria = categoriaRepository.findById(id)

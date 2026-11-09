@@ -1,6 +1,5 @@
 package com.API_Controle_Tarefas.service;
 
-
 import com.API_Controle_Tarefas.dto.TarefaRequestDTO;
 import com.API_Controle_Tarefas.dto.TarefaResponseDTO;
 import com.API_Controle_Tarefas.entity.*;
@@ -20,7 +19,7 @@ import java.time.LocalDateTime;
 
 @Service
 @RequiredArgsConstructor
-public class TarefaService {
+public class    TarefaService {
 
     private final TarefaRepository tarefaRepository;
     private final UsuarioRepository usuarioRepository;
@@ -75,13 +74,11 @@ public class TarefaService {
                 .map(TarefaResponseDTO::fromEntity);
     }
 
-
     public TarefaResponseDTO buscarPorId(Long id) {
         Tarefa tarefa = tarefaRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Tarefa", id));
         return TarefaResponseDTO.fromEntity(tarefa);
     }
-
 
     public TarefaResponseDTO atualizarTarefa(Long id, TarefaRequestDTO tarefaDTO) {
 
@@ -105,7 +102,4 @@ public class TarefaService {
         tarefaRepository.delete(tarefa);
     }
 }
-
-
-
 
