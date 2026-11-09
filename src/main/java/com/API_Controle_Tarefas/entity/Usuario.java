@@ -1,6 +1,5 @@
 package com.API_Controle_Tarefas.entity;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,7 +19,6 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode(of = {"id"})
 public class Usuario {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

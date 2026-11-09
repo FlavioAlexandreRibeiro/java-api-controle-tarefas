@@ -1,6 +1,5 @@
 package com.API_Controle_Tarefas.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
@@ -18,7 +17,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @EqualsAndHashCode(of = {"id"})
 public class Tarefa {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

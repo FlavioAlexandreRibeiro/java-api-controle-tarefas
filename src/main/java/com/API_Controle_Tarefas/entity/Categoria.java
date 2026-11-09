@@ -1,6 +1,5 @@
 package com.API_Controle_Tarefas.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
@@ -20,7 +19,6 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode(of = {"id"})
 public class Categoria {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
