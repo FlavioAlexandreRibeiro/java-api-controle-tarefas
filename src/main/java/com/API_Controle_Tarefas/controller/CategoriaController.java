@@ -1,6 +1,5 @@
 package com.API_Controle_Tarefas.controller;
 
-
 import com.API_Controle_Tarefas.dto.CategoriaRequestDTO;
 import com.API_Controle_Tarefas.dto.CategoriaResponseDTO;
 import com.API_Controle_Tarefas.service.CategoriaService;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/categoria")
+@RequestMapping("/categorias")
 @RequiredArgsConstructor
 public class CategoriaController {
 
@@ -27,12 +26,10 @@ public class CategoriaController {
                 .body(categoriaService.cadastrarCategoria(categoriaDTO));
     }
 
-
     @GetMapping
     public ResponseEntity<List<CategoriaResponseDTO>> buscarTodos() {
         return ResponseEntity.ok(categoriaService.buscarTodos());
     }
-
 
     @GetMapping("/{id}")
     public ResponseEntity<CategoriaResponseDTO> buscarPorId(
@@ -40,14 +37,12 @@ public class CategoriaController {
         return ResponseEntity.ok(categoriaService.buscarPorId(id));
     }
 
-
     @PutMapping("/{id}")
     public ResponseEntity<CategoriaResponseDTO> atualizarCategoria(
             @Positive @PathVariable Long id,
             @Valid @RequestBody CategoriaRequestDTO categoriaDTO) {
         return ResponseEntity.ok(categoriaService.atualizarCategoria(id, categoriaDTO));
     }
-
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> excluirCategoria(

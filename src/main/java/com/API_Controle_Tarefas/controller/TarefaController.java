@@ -1,6 +1,5 @@
 package com.API_Controle_Tarefas.controller;
 
-
 import com.API_Controle_Tarefas.dto.TarefaRequestDTO;
 import com.API_Controle_Tarefas.dto.TarefaResponseDTO;
 import com.API_Controle_Tarefas.service.TarefaService;
@@ -17,7 +16,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @RestController
-@RequestMapping("/tarefa")
+@RequestMapping("/tarefas")
 @RequiredArgsConstructor
 public class TarefaController {
 
@@ -44,13 +43,11 @@ public class TarefaController {
                 titulo, descricao, dataVencimento, status, prioridade, usuarioId, categoriaId, pageable));
     }
 
-
     @GetMapping("/{id}")
     public ResponseEntity<TarefaResponseDTO> buscarPorId(
             @Positive @PathVariable Long id) {
         return ResponseEntity.ok(tarefaService.buscarPorId(id));
     }
-
 
     @PutMapping("/{id}")
     public ResponseEntity<TarefaResponseDTO> atualizarTarefa(
@@ -58,7 +55,6 @@ public class TarefaController {
             @Valid @RequestBody TarefaRequestDTO tarefaDTO) {
         return ResponseEntity.ok(tarefaService.atualizarTarefa(id, tarefaDTO));
     }
-
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> excluirTarefa(
