@@ -1,6 +1,5 @@
 package com.API_Controle_Tarefas.dto;
 
-
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,6 +1,5 @@
 package com.API_Controle_Tarefas.dto;
 
-
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -13,7 +12,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CategoriaRequestDTO {
-
 
     @NotBlank(message = "O nome da categoria não pode ser nulo ou vazio")
     @Size(min = 3, max = 100, message = "O nome da categoria deve ter entre 3 e 100 caracteres")

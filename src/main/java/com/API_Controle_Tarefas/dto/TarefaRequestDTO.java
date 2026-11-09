@@ -1,6 +1,5 @@
 package com.API_Controle_Tarefas.dto;
 
-
 import com.API_Controle_Tarefas.entity.Prioridade;
 import com.API_Controle_Tarefas.entity.Status;
 import jakarta.validation.constraints.NotBlank;
@@ -18,7 +17,6 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TarefaRequestDTO {
-
 
     @NotBlank(message = "O titulo da tarefa não pode ser nulo ou vazio")
     @Size(min = 3, max = 100, message = "O titulo da tarefa deve ter entre 3 e 100 caracteres")
