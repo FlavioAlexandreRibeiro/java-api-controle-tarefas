@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "api-controle-tarefas-collection",
+		"name": "API Controle de Tarefas",
+		"description": "Collection para testar a API de Controle de Tarefas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Categorias",
+			"item": [
+				{
+					"name": "Criar Categoria",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Trabalho\",\n  \"descricao\": \"Tarefas relacionadas ao trabalho\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categorias",
+							"host": ["{{baseUrl}}"],
+							"path": ["categorias"]
+						}
+					}
+				},
+				{
+					"name": "Buscar Todas Categorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categorias",
+							"host": ["{{baseUrl}}"],
+							"path": ["categorias"]
+						}
+					}
+				},
+				{
+					"name": "Buscar Categoria por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categorias/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["categorias", "1"]
+						}
+					}
+				},
+				{
+					"name": "Atualizar Categoria",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Trabalho Atualizado\",\n  \"descricao\": \"Descrição atualizada\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categorias/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["categorias", "1"]
+						}
+					}
+				},
+				{
+					"name": "Excluir Categoria",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categorias/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["categorias", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Criar Usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao@email.com\",\n  \"senha\": \"senha123\",\n  \"telefone\": \"11999999999\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuarios",
+							"host": ["{{baseUrl}}"],
+							"path": ["usuarios"]
+						}
+					}
+				},
+				{
+					"name": "Buscar Todos Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuarios",
+							"host": ["{{baseUrl}}"],
+							"path": ["usuarios"]
+						}
+					}
+				},
+				{
+					"name": "Buscar Usuario por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["usuarios", "1"]
+						}
+					}
+				},
+				{
+					"name": "Atualizar Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"João Silva Atualizado\",\n  \"email\": \"joao.novo@email.com\",\n  \"senha\": \"novasenha123\",\n  \"telefone\": \"11777777777\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["usuarios", "1"]
+						}
+					}
+				},
+				{
+					"name": "Excluir Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["usuarios", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Tarefas",
+			"item": [
+				{
+					"name": "Criar Tarefa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"titulo\": \"Projeto API\",\n  \"descricao\": \"Desenvolver API de tarefas\",\n  \"status\": \"PENDENTE\",\n  \"prioridade\": \"ALTA\",\n  \"dataVencimento\": \"2024-12-31\",\n  \"usuarioId\": 1,\n  \"categoriaId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tarefas",
+							"host": ["{{baseUrl}}"],
+							"path": ["tarefas"]
+						}
+					}
+				},
+				{
+					"name": "Buscar Todas Tarefas (com filtros)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tarefas?page=0&size=10",
+							"host": ["{{baseUrl}}"],
+							"path": ["tarefas"],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Parâmetros opcionais: titulo, descricao, dataVencimento, status, prioridade, usuarioId, categoriaId, page, size"
+					}
+				},
+				{
+					"name": "Buscar Tarefa por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tarefas/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["tarefas", "1"]
+						}
+					}
+				},
+				{
+					"name": "Atualizar Tarefa",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"titulo\": \"Projeto API Atualizado\",\n  \"descricao\": \"API atualizada com sucesso\",\n  \"status\": \"CONCLUIDA\",\n  \"prioridade\": \"BAIXA\",\n  \"dataVencimento\": \"2025-01-15\",\n  \"usuarioId\": 1,\n  \"categoriaId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tarefas/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["tarefas", "1"]
+						}
+					}
+				},
+				{
+					"name": "Excluir Tarefa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tarefas/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["tarefas", "1"]
+						}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
