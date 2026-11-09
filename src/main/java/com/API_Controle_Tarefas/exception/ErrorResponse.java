@@ -16,11 +16,16 @@ import java.util.List;
 public class ErrorResponse {
 
     private int status;
+
     private String error;
+
     private String message;
+
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime timestamp;
+
     private String path;
+
     private List<String> details;
 
     public static ErrorResponse of(int status, String error, String message, String path) {
